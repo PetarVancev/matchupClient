@@ -28,7 +28,7 @@ function Form(props) {
   const handleSubmission = () => {
     if (props.registered) {
       Axios.post(
-        "https://sparkling-parka-hare.cyclic.cloud/login",
+        "https://ill-red-puppy-cap.cyclic.cloud/login",
         {
           email: email,
           password: password,
@@ -53,7 +53,7 @@ function Form(props) {
         });
     } else {
       Axios.post(
-        "https://sparkling-parka-hare.cyclic.cloud/register",
+        "https://ill-red-puppy-cap.cyclic.cloud/register",
         {
           name: name,
           lastName: surname,

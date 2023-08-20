@@ -70,7 +70,7 @@ export default function Home() {
 
   function handleEnroll(listingId) {
     Axios.post(
-      `https://sparkling-parka-hare.cyclic.cloud/listings/enroll/${listingId}`,
+      `https://ill-red-puppy-cap.cyclic.cloud/listings/enroll/${listingId}`,
       { userId: loggedUserId },
       {
         withCredentials: true,
@@ -91,7 +91,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    Axios.get("https://sparkling-parka-hare.cyclic.cloud/login", {
+    Axios.get("https://ill-red-puppy-cap.cyclic.cloud/login", {
       withCredentials: true,
     })
       .then((response) => {
@@ -114,7 +114,7 @@ export default function Home() {
   useEffect(() => {
     if (loginCompleted) {
       Axios.get(
-        `https://sparkling-parka-hare.cyclic.cloud/listings/${selectedMode}/${loggedUserId}`,
+        `https://ill-red-puppy-cap.cyclic.cloud/listings/${selectedMode}/${loggedUserId}`,
         {
           params:
             selectedMode === "enroll"

@@ -5,7 +5,7 @@ if (window?.location.pathname === "/login") require("../loginStyles.css");
 
 function Login() {
   useEffect(() => {
-    Axios.get("https://sparkling-parka-hare.cyclic.cloud/login", {
+    Axios.get("https://ill-red-puppy-cap.cyclic.cloud/login", {
       withCredentials: true,
     })
       .then((response) => {

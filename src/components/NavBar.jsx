@@ -9,7 +9,7 @@ function NavBar({
   selectedMode,
 }) {
   const handleSignOut = () => {
-    Axios.get("https://sparkling-parka-hare.cyclic.cloud/logout", {
+    Axios.get("https://ill-red-puppy-cap.cyclic.cloud/logout", {
       withCredentials: true,
     })
       .then((response) => {

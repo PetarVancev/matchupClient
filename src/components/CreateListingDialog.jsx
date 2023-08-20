@@ -43,7 +43,7 @@ const CreateListingDialog = ({ isOpen, closeDialog, loggedUserId }) => {
 
   const handleSubmit = () => {
     Axios.post(
-      "https://sparkling-parka-hare.cyclic.cloud/listings/create",
+      "https://ill-red-puppy-cap.cyclic.cloud/listings/create",
       {
         creatorId, // You need to define creatorId
         sportId,
