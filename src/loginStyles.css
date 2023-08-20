@@ -7,29 +7,38 @@
 
 body {
   font-family: "Source Sans Pro", sans-serif;
-  color: white;
   font-weight: 300;
-  background: #0275d8;
   width: 100%;
   height: 100%;
 }
 
-.container {
+.container.login .full-page-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0275d8;
+  z-index: -1; /* Put the background behind other content */
+}
+
+.container.login {
+  color: white;
   padding: 80px 0;
   text-align: center;
 }
 
-.container h1 {
+.container.login h1 {
   font-size: 40px;
   font-weight: 200;
 }
 
-form {
+.container.login form {
   padding: 20px 0;
   position: relative;
 }
-form input,
-.dropdown-toggle {
+.container.login form input,
+.container.login .dropdown-toggle {
   border: 1px solid rgba(252, 252, 252, 0.4);
   background-color: rgba(252, 252, 252, 0.2);
   width: 250px;
@@ -44,12 +53,12 @@ form input,
   font-weight: 300;
 }
 
-form input::placeholder,
-.dropdown-toggle {
+.container.login form input::placeholder,
+.container.login .dropdown-toggle {
   color: white;
 }
 
-form button:not(.dropdown-toggle) {
+.container.login form button:not(.dropdown-toggle) {
   appearance: none;
   outline: 0;
   background-color: white;
@@ -61,15 +70,15 @@ form button:not(.dropdown-toggle) {
   font-size: 18px;
 }
 
-.star-selector {
+.container.login .star-selector {
   margin-bottom: 10px;
 }
 
-.fas,
-.far {
+.container.login .fas,
+.container.login .far {
   font-size: 1.2rem;
 }
 
-.forgot-pass {
+.container.login .forgot-pass {
   margin: 10px auto;
 }

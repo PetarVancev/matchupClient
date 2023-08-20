@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Form from "../components/Form";
-if (window?.location.pathname === "/login") require("../loginStyles.css");
+import "../loginStyles.css";
 
 function Login() {
   useEffect(() => {
@@ -22,6 +22,7 @@ function Login() {
   const [registered, setRegistered] = useState(true);
   return (
     <div className="container login">
+      <div className="full-page-background"></div>
       <Form registered={registered} setRegistered={setRegistered} />
     </div>
   );
