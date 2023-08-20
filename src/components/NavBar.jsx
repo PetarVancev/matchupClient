@@ -9,7 +9,9 @@ function NavBar({
   selectedMode,
 }) {
   const handleSignOut = () => {
-    Axios.get("http://localhost:3001/logout", { withCredentials: true })
+    Axios.get("https://sparkling-parka-hare.cyclic.cloud/logout", {
+      withCredentials: true,
+    })
       .then((response) => {
         if (response.status === 200) {
           window.location.href = "./login"; // Redirect to login page

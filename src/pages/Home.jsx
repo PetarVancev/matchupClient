@@ -70,7 +70,7 @@ export default function Home() {
 
   function handleEnroll(listingId) {
     Axios.post(
-      `http://localhost:3001/listings/enroll/${listingId}`,
+      `https://sparkling-parka-hare.cyclic.cloud/listings/enroll/${listingId}`,
       { userId: loggedUserId },
       {
         withCredentials: true,
@@ -91,7 +91,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/login", { withCredentials: true })
+    Axios.get("https://sparkling-parka-hare.cyclic.cloud/login", {
+      withCredentials: true,
+    })
       .then((response) => {
         if (response.data.loggedIn === false) {
           window.location.href = "./login";
@@ -112,7 +114,7 @@ export default function Home() {
   useEffect(() => {
     if (loginCompleted) {
       Axios.get(
-        `http://localhost:3001/listings/${selectedMode}/${loggedUserId}`,
+        `https://sparkling-parka-hare.cyclic.cloud/listings/${selectedMode}/${loggedUserId}`,
         {
           params:
             selectedMode === "enroll"

@@ -5,7 +5,9 @@ if (window?.location.pathname === "/login") require("../loginStyles.css");
 
 function Login() {
   useEffect(() => {
-    Axios.get("http://localhost:3001/login", { withCredentials: true })
+    Axios.get("https://sparkling-parka-hare.cyclic.cloud/login", {
+      withCredentials: true,
+    })
       .then((response) => {
         if (response.data.loggedIn === true) {
           const targetUrl = `${window.location.origin}/`;
