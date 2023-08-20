@@ -3,7 +3,7 @@ import Axios from "axios";
 import NavBar from "../components/NavBar";
 import DateSelector from "../components/DateSelector";
 import Listing from "../components/Listing";
-import "../styles.css";
+require("../styles.css");
 import CreateListingDialog from "../components/CreateListingDialog";
 
 const categories = ["Football", "Basketball", "Volleyball", "Handball"];
