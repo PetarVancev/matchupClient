@@ -86,7 +86,7 @@ export default function Home() {
       })
       .catch((error) => {
         alert("error while enrolling");
-        console.error("Error while enrolling into listing", error);
+        console.log("Error while enrolling into listing", error);
       });
   }
 
@@ -107,7 +107,7 @@ export default function Home() {
         }
       })
       .catch((error) => {
-        console.error("Error checking login status:", error);
+        console.log("Error checking login status:", error);
       });
   }, []);
 
@@ -127,15 +127,11 @@ export default function Home() {
         }
       )
         .then((response) => {
-          if (response.status === 201) {
-            setListings(response.data);
-          } else {
-            setListings(response.data);
-          }
+          setListings(response.data);
         })
         .catch((error) => {
           setListings(null);
-          console.error("Error fetching user's listings:", error);
+          console.log("Error fetching user's listings:", error);
         });
     }
   }, [
@@ -186,14 +182,14 @@ export default function Home() {
             <Listing
               handleEnroll={() => handleEnroll(listing.id)}
               selectedMode={selectedMode}
-              key={listing.id} // Assuming each listing has a unique ID
-              listingData={listing} // Pass the listing data to the Listing component
+              key={listing.id}
+              listingData={listing}
+              loggedUserId={loggedUserId}
             />
           ))
         ) : (
           <p>You have no listings.</p>
         )}
-        {/* Pass down the state and functions to the PopupDialog */}
         <CreateListingDialog
           isOpen={isPopupOpen}
           closeDialog={closePopup}

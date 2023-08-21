@@ -18,7 +18,8 @@ function NavBar({
         }
       })
       .catch((error) => {
-        console.error("Error signing out:", error);
+        alert("Error signing out:");
+        console.log("Error signing out:", error);
       });
   };
 

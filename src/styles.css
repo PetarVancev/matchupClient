@@ -34,6 +34,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .dialog-content {
@@ -73,5 +74,9 @@ textarea {
 }
 
 .reviews-button {
+  margin-bottom: 10px;
+}
+
+button.send-review {
   margin-bottom: 10px;
 }

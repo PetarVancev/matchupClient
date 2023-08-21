@@ -16,7 +16,7 @@ function Login() {
         }
       })
       .catch((error) => {
-        console.error("Error checking login status:", error);
+        console.log("Error checking login status:", error);
       });
   }, []);
   const [registered, setRegistered] = useState(true);
