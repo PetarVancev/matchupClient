@@ -3,7 +3,7 @@ import Axios from "axios";
 import StarSelector from "./StarSelector";
 import DropdownInput from "./DropdownInput";
 
-function Form(props) {
+function Form() {
   const [selectedOption, setSelectedOption] = useState("Football");
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -13,6 +13,7 @@ function Form(props) {
   const sports = ["Football", "Basketball", "Volleyball", "Handball"];
   const [skillLevel, setSkillLevel] = useState(1);
   const [favSportId, setFavSportId] = useState(1);
+  const [registered, setRegistered] = useState(true);
 
   // Callback function to update selected stars in the parent component
   const handleStarsChange = (starsCount) => {
@@ -26,7 +27,7 @@ function Form(props) {
   };
 
   const handleSubmission = () => {
-    if (props.registered) {
+    if (registered) {
       Axios.post(
         "https://ill-red-puppy-cap.cyclic.cloud/login",
         {
@@ -67,7 +68,8 @@ function Form(props) {
       )
         .then((response) => {
           if (response.status == 200) {
-            props.setRegistered(true);
+            alert(response.data.message);
+            setRegistered(true);
           } else {
             if (response.data.message) {
               alert(response.data.message);
@@ -83,9 +85,16 @@ function Form(props) {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Prevents the default form submission behavior
+      handleSubmission();
+    }
+  };
+
   return (
-    <form className="form">
-      {props.registered === false && (
+    <form className="form" onKeyDown={handleKeyPress}>
+      {registered === false && (
         <div>
           <input
             type="text"
@@ -140,12 +149,12 @@ function Form(props) {
         onClick={handleSubmission}
         className="btn btn-primary"
       >
-        {props.registered ? "Login" : "Register"}
+        {registered ? "Login" : "Register"}
       </button>
-      {props.registered && (
+      {registered && (
         <div className="row">
           <button
-            onClick={() => props.setRegistered(false)}
+            onClick={() => setRegistered(false)}
             className="btn btn-primary forgot-pass"
           >
             Create an account

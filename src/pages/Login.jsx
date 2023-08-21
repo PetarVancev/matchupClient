@@ -19,11 +19,10 @@ function Login() {
         console.log("Error checking login status:", error);
       });
   }, []);
-  const [registered, setRegistered] = useState(true);
   return (
     <div className="container login">
       <div className="full-page-background"></div>
-      <Form registered={registered} setRegistered={setRegistered} />
+      <Form />
     </div>
   );
 }
