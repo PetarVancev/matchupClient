@@ -67,7 +67,7 @@ function Form() {
         { withCredentials: true }
       )
         .then((response) => {
-          if (response.status == 200) {
+          if (response.status == 201) {
             alert(response.data.message);
             setRegistered(true);
           } else {
