@@ -140,7 +140,9 @@ const CreateListingDialog = ({ isOpen, closeDialog, loggedUserId }) => {
                 type="button"
                 className="btn btn-primary submit-button"
                 onClick={handleSubmit}
-              />
+              >
+                Create
+              </button>
             </div>
             <button className="btn-close btn btn-primary" onClick={closeDialog}>
               Close
